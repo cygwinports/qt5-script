@@ -15,7 +15,7 @@ SRC_URI="http://download.qt-project.org/official_releases/qt/${VERSION%.*}/${VER
 SRC_DIR="qtscript-opensource-src-${VERSION}"
 PATCH_URI="5.1.0-jsc-cygwin.patch"
 
-PKG_NAMES="libQt5Script5 libQt5Script-devel libQt5ScriptTools5 libQt5ScriptTools-devel ${NAME}-examples"
+PKG_NAMES="libQt5Script5 libQt5Script-devel libQt5ScriptTools5 libQt5ScriptTools-devel ${NAME}-doc ${NAME}-examples"
 libQt5Script5_CONTENTS="usr/bin/cygQt5Script-5.dll"
 libQt5Script_devel_CONTENTS="
 	usr/include/qt5/QtScript/
@@ -32,11 +32,19 @@ libQt5ScriptTools_devel_CONTENTS="
 	usr/lib/pkgconfig/Qt5ScriptTools.pc
 	usr/lib/qt5/mkspecs/modules/qt_lib_scripttools.pri
 "
+qt5_script_doc_CATEGORY="X11"
+qt5_script_doc_CONTENTS="usr/share/qt5/doc/qtscript*"
+qt5_script_examples_CATEGORY="X11"
 qt5_script_examples_CONTENTS="usr/lib/qt5/examples/script/"
+
+src_compile() {
+	cd ${B}
+	cygqmake5 ${S}
+	cygmake
+	cygmake docs
+}
 
 src_install() {
 	cd ${B}
-	qt5_qmake_install
-
-	rm ${D}/usr/lib/*.la
+	qt5_qmake_install install_docs
 }
