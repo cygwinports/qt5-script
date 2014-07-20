@@ -1,7 +1,7 @@
 inherit qt5-qmake
 
 NAME="qt5-script"
-VERSION=5.1.0
+VERSION=5.2.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Qt C++ application framework (QtScript library)"
@@ -23,6 +23,7 @@ libQt5Script_devel_CONTENTS="
 	usr/lib/libQt5Script.*
 	usr/lib/pkgconfig/Qt5Script.pc
 	usr/lib/qt5/mkspecs/modules/qt_lib_script.pri
+	usr/lib/qt5/mkspecs/modules/qt_lib_script_private.pri
 "
 libQt5ScriptTools5_CONTENTS="usr/bin/cygQt5ScriptTools-5.dll"
 libQt5ScriptTools_devel_CONTENTS="
@@ -31,6 +32,7 @@ libQt5ScriptTools_devel_CONTENTS="
 	usr/lib/libQt5ScriptTools.*
 	usr/lib/pkgconfig/Qt5ScriptTools.pc
 	usr/lib/qt5/mkspecs/modules/qt_lib_scripttools.pri
+	usr/lib/qt5/mkspecs/modules/qt_lib_scripttools_private.pri
 "
 qt5_script_doc_CATEGORY="X11"
 qt5_script_doc_CONTENTS="usr/share/qt5/doc/qtscript*"
