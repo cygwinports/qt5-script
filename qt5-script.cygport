@@ -16,7 +16,7 @@ SRC_DIR="qtscript-opensource-src-${VERSION}"
 PATCH_URI="5.1.0-jsc-cygwin.patch"
 
 PKG_NAMES="libQt5Script5 libQt5Script-devel libQt5ScriptTools5 libQt5ScriptTools-devel ${NAME}-doc ${NAME}-examples"
-libQt5Script5_CONTENTS="usr/bin/cygQt5Script-5.dll"
+libQt5Script5_CONTENTS="usr/bin/cygQt5Script-5.dll usr/share/doc/"
 libQt5Script_devel_CONTENTS="
 	usr/include/qt5/QtScript/
 	usr/lib/cmake/Qt5Script/
