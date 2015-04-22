@@ -31,15 +31,6 @@
      || OS(DARWIN)           \
      || OS(FREEBSD)          \
      || OS(HAIKU)            \
-@@ -696,7 +702,7 @@
- 
- #if !OS(WINDOWS) && !OS(SOLARIS) && !OS(QNX) \
-     && !OS(SYMBIAN) && !OS(HAIKU) && !OS(RVCT) \
--    && !OS(ANDROID) && !OS(AIX) && !OS(HPUX)
-+    && !OS(ANDROID) && !OS(AIX) && !OS(HPUX) && !OS(CYGWIN)
- #define HAVE_TM_GMTOFF 1
- #define HAVE_TM_ZONE 1
- #define HAVE_TIMEGM 1
 @@ -880,7 +886,7 @@
  #define WTF_USE_JSVALUE64 1
  #elif CPU(ARM) || CPU(PPC64)
